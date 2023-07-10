@@ -16,9 +16,5 @@
     </environments>
     <mappers>
         <mapper resource="mappers/CitiesMapper.xml"/>
-        <mapper resource="mappers/HouseMapper.xml"/>
-        <mapper resource="mappers/StopMapper.xml"/>
-        <mapper resource="mappers/StreetsMapper.xml"/>
-        <mapper resource="mappers/TransportationMapper.xml"/>
     </mappers>
 </configuration>

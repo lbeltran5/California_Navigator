@@ -54,6 +54,11 @@ public class Cities {
     // toString method
     @Override
     public String toString() {
-        return "City [cityId=" + cityId + ", cityName=" + cityName + ", latitude=" + latitude + ", longitude=" + longitude + "]";
+        return "City {" +
+                "cityId=" + cityId +
+                ", cityName=" + cityName +
+                ", latitude=" + latitude +
+                ", longitude=" + longitude +
+                "}";
     }
 }

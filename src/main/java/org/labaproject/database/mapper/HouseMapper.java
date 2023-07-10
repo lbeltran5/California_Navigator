@@ -1,2 +1,4 @@
-package org.labaproject.database.mapper;public class HouseMapper {
+package org.labaproject.database.mapper;
+
+public class HouseMapper {
 }

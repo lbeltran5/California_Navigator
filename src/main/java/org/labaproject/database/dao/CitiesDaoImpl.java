@@ -36,4 +36,9 @@ public class CitiesDaoImpl implements CitiesDao {
     public void deleteCities(int cityId) {
         citiesMapper.deleteCities(cityId);
     }
+
+    @Override
+    public List<Cities> getOptions() {
+      return  citiesMapper.getOptions();
+    }
 }

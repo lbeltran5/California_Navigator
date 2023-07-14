@@ -10,4 +10,5 @@ public interface CitiesMapper {
     void addCities(Cities cities);
     void updateCities(Cities cities);
     void deleteCities(int cityId);
+    List<Cities> getOptions();
 }

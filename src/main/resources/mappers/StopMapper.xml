@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.labaproject.database.mapper.StopMapper">
+
+    <resultMap id="StopResultMap" type="org.labaproject.database.model.Stop">
+        <id property="stopId" column="stop_id" />
+        <result property="stopName" column="stop_name" />
+        <result property="transportId" column="transport_id" />
+    </resultMap>
+
+    <select id="getStopById" parameterType="int" resultMap="StopResultMap">
+        SELECT * FROM Stop WHERE stop_id = #{stopId}
+    </select>
+
+    <select id="getAllStop" resultMap="StopResultMap">
+        SELECT * FROM Stop
+    </select>
+
+    <insert id="addStop" parameterType="org.labaproject.database.model.Stop">
+        INSERT INTO Stop (stop_name, transport_id)
+        VALUES (#{stopName}, #{transportId}
+    </insert>
+
+    <update id="updateStop" parameterType="org.labaproject.database.model.Stop">
+        UPDATE Stop
+        SET stop_name = #{stop_name}, transport_id = #{transportId}
+        WHERE stop_id = #{stopId}
+    </update>
+
+    <delete id="deleteStop" parameterType="int">
+        DELETE FROM Stop WHERE stop_id = #{stopId}
+    </delete>
+
+</mapper>

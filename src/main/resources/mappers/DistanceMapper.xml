@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.labaproject.database.mapper.DistanceMapper">
+
+    <resultMap id="DistanceResultMap" type="org.labaproject.database.model.Distance">
+        <id property="distanceId" column="distance_id" />
+        <result property="sourceCityId" column="source_city_id" />
+        <result property="destinationCityId" column="destination_city_id" />
+        <result property="distance" column="distance" />
+    </resultMap>
+
+    <select id="getDistanceById" parameterType="int" resultMap="DistanceResultMap">
+        SELECT * FROM Distance WHERE distance_id = #{distanceId}
+    </select>
+
+    <select id="getAllDistance" resultMap="DistanceResultMap">
+        SELECT * FROM Distance
+    </select>
+
+    <insert id="addDistance" parameterType="org.labaproject.database.model.Distance">
+        INSERT INTO Distance (source_city_id, destination_city_id, distance)
+        VALUES (#{sourceCityId}, #{destinationCityId}, #{distance})
+    </insert>
+
+    <update id="updateDistance" parameterType="org.labaproject.database.model.Distance">
+        UPDATE Distance
+        SET source_city_id = #{sourceCityId}, destination_city_id = #{destinationCityId}, distance = #{distance}
+        WHERE distance_id = #{distanceId}
+    </update>
+
+    <delete id="deleteDistance" parameterType="int">
+        DELETE FROM Distance WHERE distance_id = #{distanceId}
+    </delete>
+
+</mapper>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.labaproject.database.mapper.HouseMapper">
+
+    <resultMap id="HouseResultMap" type="org.labaproject.database.model.House">
+        <id property="houseId" column="house_id" />
+        <result property="houseNumber" column="house_number" />
+        <result property="streetId" column="street_id" />
+        <result property="cityId" column="city_id" />
+    </resultMap>
+
+    <select id="getHouseById" parameterType="int" resultMap="HouseResultMap">
+        SELECT * FROM House WHERE house_id = #{houseId}
+    </select>
+
+    <select id="getAllHouse" resultMap="HouseResultMap">
+        SELECT * FROM House
+    </select>
+
+    <insert id="addHouse" parameterType="org.labaproject.database.model.House">
+        INSERT INTO House (house_number, street_id, city_id)
+        VALUES (#{houseNumber}, #{streetId}, #{cityId})
+    </insert>
+
+    <update id="updateHouse" parameterType="org.labaproject.database.model.House">
+        UPDATE House
+        SET house_number = #{houseNumber}, street_id = #{streetId}, city_id = #{cityId}
+        WHERE house_id = #{houseId}
+    </update>
+
+    <delete id="deleteHouse" parameterType="int">
+        DELETE FROM House WHERE house_id = #{houseId}
+    </delete>
+
+</mapper>

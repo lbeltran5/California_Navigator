@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.labaproject.database.mapper.StreetsMapper">
+
+    <resultMap id="StreetsResultMap" type="org.labaproject.database.model.Streets">
+        <id property="streetId" column="street_id" />
+        <result property="streetName" column="street_name" />
+    </resultMap>
+
+    <select id="getStreetById" parameterType="int" resultMap="StreetsResultMap">
+        SELECT * FROM Streets WHERE street_id = #{streetId}
+    </select>
+
+    <select id="getAllStreets" resultMap="StreetsResultMap">
+        SELECT * FROM Streets
+    </select>
+
+    <insert id="addStreets" parameterType="org.labaproject.database.model.Streets">
+        INSERT INTO Streets (street_name)
+        VALUES (#{streetName}
+    </insert>
+
+    <update id="updateStreets" parameterType="org.labaproject.database.model.Streets">
+        UPDATE Streets
+        SET street_name = #{street_name}
+        WHERE street_id = #{streetId}
+    </update>
+
+    <delete id="deleteStreets" parameterType="int">
+        DELETE FROM Streets WHERE street_id = #{streetId}
+    </delete>
+
+</mapper>

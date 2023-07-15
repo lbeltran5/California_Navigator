@@ -8,6 +8,6 @@ public class Main {
     private static final Logger LOGGER = LogManager.getLogger(Main.class);
     public static void main(String[] args) {
         System.out.println("This is our project California Navigator");
-        //LOGGER.info("This is our project California Navigator");
+        LOGGER.info("This is our project California Navigator");
     }
 }

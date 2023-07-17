@@ -2,17 +2,16 @@ package org.labaproject.database;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.labaproject.database.configuration.MyBatisConfiguration;
 import org.labaproject.database.dao.*;
 import org.labaproject.database.mapper.*;
 import org.labaproject.database.model.*;
-
 import java.util.List;
+import java.util.logging.Logger;
 
 public class MyBatisRunner {
-    private static final Logger LOGGER = LogManager.getLogger(MyBatisRunner.class);
+    private static final Logger LOGGER = Logger.getLogger(MyBatisRunner.class.getName());
+
     public static void main(String[] args) {
         SqlSessionFactory sqlSessionFactory = MyBatisConfiguration.getSqlSessionFactory();
         try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
@@ -40,36 +39,36 @@ public class MyBatisRunner {
             DistanceDao distanceDao = new DistanceDaoImpl(distanceMapper);
             List<Distance> distanceList = distanceDao.getAllDistance();
 
-            System.out.println("Cities Table:");
+            LOGGER.info("Cities Table:");
             for (Cities city : citiesList) {
-                System.out.println(city);
+                LOGGER.info(city.toString());
+            }
 
-            System.out.println("Houses table:") ;
+            LOGGER.info("Houses table:");
             for (House house : houseList) {
-                System.out.println(house);
+                LOGGER.info(house.toString());
+            }
 
-            System.out.println("Stop Table:");
+            LOGGER.info("Stop Table:");
             for (Stop stop : stopList) {
-                System.out.println(stop);
+                LOGGER.info(stop.toString());
+            }
 
-            System.out.println("Streets Table:");
+            LOGGER.info("Streets Table:");
             for (Streets streets : streetsList) {
-                System.out.println(streets);
+                LOGGER.info(streets.toString());
+            }
 
-            System.out.println("Transportation Table");
+            LOGGER.info("Transportation Table:");
             for (Transportation transportation : transportationList) {
-                System.out.println(transportation);
+                LOGGER.info(transportation.toString());
+            }
 
-            System.out.println("Distance Table:");
+            LOGGER.info("Distance Table:");
             for (Distance distance : distanceList) {
-                System.out.println(distance);
+                LOGGER.info(distance.toString());
             }
-            }
-            }
-            }
-            }
-            }
+
         }
     }
 }
-

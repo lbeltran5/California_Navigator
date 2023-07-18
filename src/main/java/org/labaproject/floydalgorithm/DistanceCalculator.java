@@ -1,4 +1,4 @@
-package org.labaproject.floyddatabse;
+package org.labaproject.floydalgorithm;
 
 public class DistanceCalculator {
     private static final double EARTH_RADIUS = 6371;

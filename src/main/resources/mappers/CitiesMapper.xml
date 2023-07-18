@@ -35,4 +35,8 @@
         DELETE FROM Cities WHERE city_id = #{cityId}
     </delete>
 
+    <select id="getOptions" resultType="java.lang.String">
+        SELECT city_name FROM Cities
+    </select>
+
 </mapper>

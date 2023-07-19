@@ -27,13 +27,21 @@ public class MainFloydAlgo {
 
             UserInput userInput = new UserInput();
             System.out.println("Welcome to the California Travel Planner!");
-            String sourceStation = userInput.promptCity(("Enter the starting Station: "));
+        /*    String sourceStation = userInput.promptCity(("Enter the starting Station: "));
             String destinationStation = userInput.promptCity(("Enter Destination Station: "));
-            int stationID1 = stationsMapper.getStationID();
-            int stationID2 = stationsMapper.getStationID();
+            String sc = "Rose Garden";
+            String dc = "Lower Pacific";
+            int stationID1 = stationsMapper.getStationID(sc);
+            int stationID2 = stationsMapper.getStationID(dc);
             LOGGER.info(String.valueOf(stationID2));
             userInput.close();
-            ShortestStationDistance shortPath = new ShortestStationDistance();
+        */
+
+            int stationID1 = 4;
+            int stationID2 = 3;
+
+
+            ShortestStationDistance shortPath = new ShortestStationDistance(stationsList);
             shortPath.printShortestPath(stationID1, stationID2);
         }
     }

@@ -10,11 +10,15 @@ public class ShortestStationDistance {
     private int[][] stationMatrix;
     private List<Stations> stationsList;
 
-    public  void FloydAlgorithmCal(List<Stations> stationsList) {
+
+
+    public  ShortestStationDistance(List<Stations> stationsList) {
         this.stationsList = stationsList;
         int size = stationsList.size();
         distanceMatrix = new double[size][size];
        stationMatrix = new int[size][size];
+        calculateShortestDistances();
+
     }
 
     public void calculateShortestDistances() {
@@ -43,11 +47,11 @@ public class ShortestStationDistance {
 
     public void printShortestPath(int startingCity, int destinationCity) {
         int nextCity = startingCity;
-        String path = stationsList.get(startingCity).getStationName();
+        String path = this.stationsList.get(startingCity).getStationName();
 
-        while (startingCity != destinationCity) {
+        while (nextCity != destinationCity) {
             nextCity = stationMatrix[nextCity][destinationCity];
-            path += " -> " + stationsList.get(nextCity).getStationName();
+            path += " -> " + this.stationsList.get(nextCity).getStationName();
         }
 
         System.out.println("Shortest path: " + path);

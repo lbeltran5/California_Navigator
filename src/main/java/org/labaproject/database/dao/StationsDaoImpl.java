@@ -23,7 +23,9 @@ public class StationsDaoImpl implements StationsDao{
     @Override
     public int getStationID(String stationName) {
 
-        return stationsMapper.getStationID();
+        return sqlSession.selectOne("getStationID");
+
+
     }
 
 }

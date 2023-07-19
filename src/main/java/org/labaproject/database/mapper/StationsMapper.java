@@ -7,5 +7,5 @@ import java.util.List;
 public interface StationsMapper {
 
     List<Stations> getAllStations();
-    int getStationID();
+    int getStationID(String str);
 }

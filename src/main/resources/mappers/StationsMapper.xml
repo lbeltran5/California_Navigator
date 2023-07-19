@@ -18,7 +18,7 @@
     <select id="getAllStations"  resultMap="StationsResultMap">
         SELECT * FROM Stations
     </select>
-    <select id="getStationID" resultType="int" resultMap="StationsResultMap">
+    <select id="getStationID" resultType="int" >
         SELECT station_id FROM Stations where station_name= #{stationName}
     </select>
 

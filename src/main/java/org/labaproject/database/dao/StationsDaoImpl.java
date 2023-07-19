@@ -16,16 +16,14 @@ public class StationsDaoImpl implements StationsDao{
 
     @Override
     public List<Stations> getAllStations() {
-
-       return sqlSession.selectList("getAllStations");
+       return stationsMapper.getAllStations();
+               //sqlSession.selectList("getAllStations");
     }
 
     @Override
     public int getStationID(String stationName) {
-
-        return sqlSession.selectOne("getStationID");
-
-
+        return stationsMapper.getStationID(stationName);
+                //sqlSession.selectOne("getStationID");
     }
 
 }

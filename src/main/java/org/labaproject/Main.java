@@ -14,6 +14,9 @@ public class Main {
 
             // Validate and process the user input
             processUserInput(startingCity, destinationCity, preferredTransport);
+
+
+
         }
 
         private static void processUserInput(String startingCity, String destinationCity, String preferredTransport) {

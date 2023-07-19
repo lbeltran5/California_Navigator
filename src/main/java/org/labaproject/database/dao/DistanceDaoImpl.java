@@ -38,4 +38,5 @@ public class DistanceDaoImpl implements DistanceDao{
     public void deleteDistance(int distanceId) {
         distanceMapper.deleteDistance(distanceId);
     }
+
 }

@@ -21,5 +21,7 @@
         <mapper resource="mappers/StreetsMapper.xml"/>
         <mapper resource="mappers/TransportationMapper.xml"/>
         <mapper resource="mappers/DistanceMapper.xml"/>
+        <mapper resource="mappers/StationsMapper.xml"/>
+        <mapper resource="mappers/StationDistance.xml"/>
     </mappers>
 </configuration>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.labaproject.database.mapper.StationDistanceMapper">
+
+    <resultMap id="StationDistanceResultMap" type="org.labaproject.database.model.StationDistance">
+        <id property="sdID" column="sd_id" />
+        <result property="stationDistance" column="stationDistance" />
+    </resultMap>
+
+    <select id="getAllStationDistance" resultMap="StationDistanceResultMap">
+        SELECT * FROM Distance
+    </select>
+
+    <update id="calculateDistance" parameterType="org.labaproject.database.model.StationDistance">
+        UPDATE StationDistance
+        SET stationDistance = #{stationDistance}
+        WHERE station1 = #{station1} AND station2 = #{station2},
+    </update>
+</mapper>

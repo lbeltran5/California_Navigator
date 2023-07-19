@@ -1,5 +1,6 @@
 package org.labaproject.database.mapper;
 
+import org.apache.ibatis.annotations.Param;
 import org.labaproject.database.model.Cities;
 import org.labaproject.database.model.Distance;
 

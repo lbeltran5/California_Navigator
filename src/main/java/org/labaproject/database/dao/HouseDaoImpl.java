@@ -36,4 +36,10 @@ public class HouseDaoImpl implements HouseDao {
     public void deleteHouse(int houseId) {
         houseMapper.deleteHouse(houseId);
     }
+
+    @Override
+    public List<House> getAllHouses() {
+        return houseMapper.getAllHouse();
+    }
+
 }

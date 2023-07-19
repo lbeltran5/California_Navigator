@@ -15,4 +15,5 @@ public interface HouseDao {
     void updateHouse(House house);
     void deleteHouse(int houseId);
 
+    List<House> getAllHouses();
 }

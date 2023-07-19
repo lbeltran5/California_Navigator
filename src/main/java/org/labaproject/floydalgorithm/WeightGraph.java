@@ -1,3 +1,5 @@
+package org.labaproject.floydalgorithm;
+
 import org.labaproject.database.dao.HouseDao;
 import org.labaproject.database.dao.CitiesDao;
 import org.labaproject.database.dao.StreetsDao;
@@ -38,14 +40,14 @@ public class WeightGraph {
         }
 
         // Populate weight matrix with distances between connected cities
-        for (Streets street : streets) {
-            int startCityId = street.getStartCityId();
-            int endCityId = street.getEndCityId();
+     /*   for (Streets street : streets) {
+            int startCityId = street.getCityId();
+            int endCityId = street.getCityId();
             double distance = calculateDistance(startCityId, endCityId);
             weightMatrix[startCityId - 1][endCityId - 1] = (int) distance;
             weightMatrix[endCityId - 1][startCityId - 1] = (int) distance;
         }
-
+    */
         // Populate weight matrix with distances between cities and houses
         for (House house : houses) {
             int cityId = house.getCityId();

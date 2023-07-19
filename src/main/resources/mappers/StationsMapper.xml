@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.labaproject.database.mapper.StationsMapper">
+
+    <resultMap id="StationsResultMap" type="org.labaproject.database.model.Stations">
+        <id property="stationID" column="station_id" />
+        <result property="stationID" column="station_id"/>
+        <result property="stationName" column="station_name" />
+        <result property="cityID" column="city_id" />
+        <result property="station_longitude" column="station_longitude" />
+        <result property="station_latitude" column="station_latitude" />
+    </resultMap>
+
+
+    <select id="getAllStations"  resultMap="StationsResultMap">
+        SELECT * FROM Stations
+    </select>
+    <select id="getStationID" resultType="int" >
+        SELECT station_id FROM Stations where station_name= #{stationName}
+    </select>
+
+</mapper>
